@@ -22,7 +22,7 @@ var prefix = ".";
 client.on('ready', () => {
   console.log(`İsim: ${client.user.tag}`);
   client.user.setStatus("dnd");
-  client.user.setGame(`${prefix}yardım + ${client.guilds.size} sunucu + ${client.users.size} kullanıcı`);
+  client.user.setActivity(`${prefix}yardım + ${client.guilds.size} sunucu + ${client.users.size} kullanıcı`);
 });
 
 client.on('message', msg => {
