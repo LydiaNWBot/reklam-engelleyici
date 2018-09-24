@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-var prefix = "noads";
+var prefix = ".";
 
 
 
@@ -21,6 +21,8 @@ var prefix = "noads";
 
 client.on('ready', () => {
   console.log(`İsim: ${client.user.tag}`);
+  client.user.setStatus("dnd");
+  client.user.setGame(`${prefix}yardım + ${client.guilds.size} sunucu + ${client.users.size} kullanıcı`);
 });
 
 client.on('message', msg => {
@@ -37,7 +39,7 @@ client.on('message', msg => {
 client.on("message", msg => {
   if (msg.content.toLowerCase().match(/(porn|nude|fuck)/g) && !msg.author.bot && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
     msg.delete(30).then(deletedMsg => {
-      deletedMsg.reply("I'm sorry, but you can't curse on this server!").catch(e => {
+      deletedMsg.reply("Üzgünüm Mesajın Engellendi!").catch(e => {
         console.error(e);
       });
     }).catch(e => {
@@ -52,7 +54,7 @@ client.on("message", msg => {
 client.on("message", msg => {
   if (msg.content.toLowerCase().match(/(discord\.gg\/)|(discordapp\.com\/invite\/)/g) && !msg.author.bot && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
     msg.delete(30).then(deletedMsg => {
-      deletedMsg.reply("Discord davet linki paylaştığını algıladık. Bu sunucu No-Ads ile korunmakta.").catch(e => {
+      deletedMsg.reply("Discord davet linki paylaştığını algıladık. Bu sunucu LydiaNW Reklam-Engelleyici ile korunmakta.").catch(e => {
         console.error(e);
       });
     }).catch(e => {
