@@ -65,4 +65,4 @@ client.on("message", msg => {
 
 
 
-client.login('tokeninburayagelecek!');  
+client.login('NDkzODU2MDUwNTU0OTk0Njkw.DorD2Q.rhB5xP0zfijZNJUsx5ZYYGZ607U');  
