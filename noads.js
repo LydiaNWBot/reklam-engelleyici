@@ -54,7 +54,7 @@ client.on("message", msg => {
 client.on("message", msg => {
   if (msg.content.toLowerCase().match(/(discord\.gg\/)|(discordapp\.com\/invite\/)/g) && !msg.author.bot && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
     msg.delete(30).then(deletedMsg => {
-      deletedMsg.reply("Discord davet linki paylaştığını algıladık. Bu sunucu LydiaNW Reklam-Engelleyici ile korunmakta.").catch(e => {
+      deletedMsg.reply("Discord davet linki paylaştığını algıladık. Bu sunucu MeM Reklam-Engelleyici ile korunmakta.").catch(e => {
         console.error(e);
       });
     }).catch(e => {
